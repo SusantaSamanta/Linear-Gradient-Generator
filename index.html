@@ -1,0 +1,245 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>gradient generator</title>
+  <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    :root{
+      --arrowBorder : 1px solid gray;
+    }
+    body{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: linear-gradient(to  bottom right, #5B06D2, #34BC59);
+      color: white;
+    }
+    #containerForDecktop{
+      height: 100%;
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 0px solid;
+      
+    }
+    #heading{
+      font-size: 025px;
+      margin-bottom: 60px;
+    }
+    #orientationSection{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    
+    /* arrow symbol customize & rotation */
+    
+    #orientArrowContainer{
+      width: auto;
+      margin-top: 10px;
+      display: flex;
+      column-gap: 25px;
+      color: #ffffff5c;
+      border: 0px solid red;
+    }
+    #toBottomRight{
+      color: white;
+      transform: rotate(45deg);
+      transform-origin: center;
+    }
+    #toRight{
+      transform: rotate(0deg);
+      transform-origin: center;
+    }
+    #toTopRight{
+      transform: rotate(315deg);
+      transform-origin: center;
+    }
+    #toTop{
+      transform: rotate(270deg);
+      transform-origin: center;
+    }
+    #toTopLeft{
+      transform: rotate(225deg);
+      transform-origin: center;
+    }
+    
+    #toLeft{
+      transform: rotate(180deg);
+      transform-origin: center;
+    }
+    #toLeftBottom{
+      transform: rotate(135deg);
+      transform-origin: center;
+    }
+    #toBottom{
+      transform: rotate(90deg);
+      transform-origin: center;
+    }
+    
+    
+    
+    #buttonContainer{
+      display: flex;
+      column-gap: 30px;
+    }
+    .colorButton{
+      height: 40px;
+      width: 130px;
+      border: none;
+      border-radius: 50px;
+      color: white;
+      box-shadow: 2px 5px 10px 2px #00000090;
+      outline: 1px solid white;
+    }
+    #firstColorButton{
+      background: #5B06D2;
+    }
+    #secondColorButton{
+      background: #34BC59;
+    }
+    
+    #copySection {
+      width: 100%;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #copySection h1{
+      margin-top: 10px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    #cssCodeTxt{
+      width: 300px;
+      margin-top: 20px;
+    }
+    #colorCobeDetail{
+      height: 50px;
+      width: 300px;
+      margin-top: 0px;
+      padding-left: 20px;
+      padding-right: 8px;
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .4px;
+      border-radius: 4px;
+      border-left: 2px solid #bebebe;
+      background: #dadada3e;
+      backdrop-filter: blur(20px);
+      box-shadow: 3px 3px 5px 2px #00000062;
+    }
+    
+    
+    
+    
+    
+     @media screen and (min-width: 800px) {
+
+      #containerForDecktop{
+        height: auto;
+        width: auto;
+        padding: 90px 60px;
+        border-radius: 30px;
+        border-top: .5px solid white;
+        border-right: 1.5px solid white;
+        border-bottom: 1.5px solid white;
+        border-left: .5px solid white;
+        background: #4343430c;
+        backdrop-filter: blur(10px);
+      }
+      #heading{
+        font-size: 35px;
+      }
+      
+      #orientArrowContainer{
+        width: auto;
+        margin-top: 20px;
+        margin-bottom: 5px;
+        column-gap: 25px;
+    }
+      #buttonContainer{
+        column-gap: 50px;
+       /* border: 1px solid red;*/
+      }
+      .colorButton{
+        height: 55px;
+        width: 180px;
+        border-radius: 50px;
+        font-size: 20px;
+      }
+      #copySection h1{
+        margin-top: 10px;
+        font-size: 17px;
+      }
+      #cssCodeTxt{
+        width: 350px;
+        margin-top: 25px;
+      }
+      
+      #colorCobeDetail {
+        height: 70px;
+        width: 350px;
+        padding-left: 25px;
+        padding-right: 10px;
+        font-size: 15px;
+        border-left: 3px solid #bebebe;
+        background: #dadada3e;
+        box-shadow: 3px 3px 5px 2px #00000062;
+    }
+      
+    }
+    
+    
+  </style>
+  </head>
+  <body>
+  <div id="containerForDecktop">
+    
+    <h1 id="heading">Generate Css Color Gradient</h1>
+    <section id="orientationSection">
+      <p id="cssCodeTxt">Select Orientation For Gradient :</p>
+      <div id="orientArrowContainer">
+        <i class="fa-solid fa-arrow-right" id="toBottomRight"></i> 
+        <i class="fa-solid fa-arrow-right" id="toRight"></i> 
+        <i class="fa-solid fa-arrow-right" id="toTopRight"></i> 
+        <i class="fa-solid fa-arrow-right" id="toTop"></i> 
+        <i class="fa-solid fa-arrow-right" id="toTopLeft"></i> 
+        <i class="fa-solid fa-arrow-right" id="toLeft"></i> 
+        <i class="fa-solid fa-arrow-right" id="toLeftBottom"></i> 
+        <i class="fa-solid fa-arrow-right" id="toBottom"></i> 
+      </div>
+      
+    </section>
+    <div id="buttonContainer">
+      <button id="firstColorButton" class="colorButton">#5B06D2</button>
+      <button id="secondColorButton" class="colorButton">#34BC59</button>
+    </div>
+    <section id="copySection">
+      <h1>Copy Color Code Here</h1>
+      <p id="cssCodeTxt">css code : </p>
+      <p id="colorCobeDetail">background-image: linear-gradient(to bottom right, #8f33f4, #9c52f7);</p>
+    </section>
+  </div>
+  
+  <script src="app.js"></script>
+  
+  
+  </body>
+  </html>
